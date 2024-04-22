@@ -12,7 +12,6 @@
       "build": "pnpm ts:check && vite build"
    },
    "dependencies": {
-      "@react-vite-trpc/ui": "workspace:*",
       "@tanstack/react-query": "^4.29.12",
       "@trpc/client": "^10.29.1",
       "@trpc/react-query": "^10.29.1",

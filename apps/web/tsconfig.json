@@ -9,9 +9,6 @@
    "references": [
       {
          "path": "../server"
-      },
-      {
-         "path": "../../@react-vite-trpc/ui/tsconfig.json"
       }
    ]
 }
