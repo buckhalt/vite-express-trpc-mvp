@@ -1,5 +1,5 @@
-import { db } from 'db/db'
-import { apiCreateProject, projects } from 'db/schema'
+import { db } from 'drizzle/db'
+import { apiCreateProject, projects } from 'drizzle/schema'
 
 import { publicProcedure, router } from 'trpc'
 
@@ -9,6 +9,7 @@ export const projectsRouter = router({
    }),
 
    getAll: publicProcedure.query(async () => {
-      return await db.select(projects)
+      const allProjects = await db.select().from(projects)
+      return allProjects
    }),
 })

@@ -1,11 +1,14 @@
 {
    "extends": "@react-vite-trpc/tsconfig/react.json",
    "compilerOptions": {
-      "baseUrl": "src",
+      "baseUrl": ".",
       "outDir": "dist",
-      "composite": false
+      "composite": false,
+      "paths": {
+         "@/*": ["./src/*"]
+      }
    },
-   "include": ["src", "cypress", "vite.config.ts"],
+   "include": ["src", "vite.config.ts"],
    "references": [
       {
          "path": "../server"

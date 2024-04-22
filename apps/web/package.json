@@ -12,25 +12,37 @@
       "build": "pnpm ts:check && vite build"
    },
    "dependencies": {
+      "@radix-ui/react-dialog": "^1.0.5",
+      "@radix-ui/react-label": "^2.0.2",
+      "@radix-ui/react-slot": "^1.0.2",
       "@tanstack/react-query": "^4.29.12",
       "@trpc/client": "^10.29.1",
       "@trpc/react-query": "^10.29.1",
       "@trpc/server": "^10.29.1",
+      "class-variance-authority": "^0.7.0",
+      "clsx": "^2.1.0",
+      "lucide-react": "^0.372.0",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
-      "react-query": "^3.39.3"
+      "react-query": "^3.39.3",
+      "tailwind-merge": "^2.3.0",
+      "tailwindcss-animate": "^1.0.7"
    },
    "devDependencies": {
+      "@react-vite-trpc/eslint-config": "workspace:*",
+      "@react-vite-trpc/tsconfig": "workspace:*",
+      "@tanstack/router": "0.0.1-beta.139",
+      "@types/node": "^20.12.7",
       "@types/react": "^18.2.11",
       "@types/react-dom": "^18.2.4",
       "@vitejs/plugin-react": "^3.1.0",
+      "autoprefixer": "^10.4.19",
       "envalid": "^7.3.1",
-      "@tanstack/router": "0.0.1-beta.139",
       "jsdom": "^22.1.0",
+      "postcss": "^8.4.38",
+      "tailwindcss": "^3.4.3",
       "typescript": "^4.9.5",
       "vite": "^4.3.9",
-      "vite-tsconfig-paths": "^4.2.0",
-      "@react-vite-trpc/tsconfig": "workspace:*",
-      "@react-vite-trpc/eslint-config": "workspace:*"
+      "vite-tsconfig-paths": "^4.2.0"
    }
 }

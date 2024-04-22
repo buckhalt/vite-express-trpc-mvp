@@ -1,6 +1,5 @@
+import { Home } from '@/components/pages'
 import { Outlet, RootRoute, Route, Router, RouterProvider } from '@tanstack/router'
-
-import { Home } from 'components/features'
 
 const rootRoute = new RootRoute({ component: () => <Outlet /> })
 

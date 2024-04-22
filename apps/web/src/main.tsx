@@ -1,8 +1,9 @@
+import { Providers } from '@/components/shared'
 import ReactDOM from 'react-dom/client'
 
-import { App } from 'components/core/App'
+import { App } from '@/components/core/App'
 
-import { Providers } from 'components/shared'
+import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
    <Providers>

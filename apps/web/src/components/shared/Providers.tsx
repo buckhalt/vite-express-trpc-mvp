@@ -1,9 +1,8 @@
+import { trpc } from '@/trpc'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { type PropsWithChildren } from 'react'
 
-import { trpc } from 'trpc'
-
-import { useTrpc } from 'hooks'
+import { useTrpc } from '@/hooks'
 
 export const Providers = ({ children }: PropsWithChildren) => {
    const { trpcQueryClient, trpcClient } = useTrpc()
