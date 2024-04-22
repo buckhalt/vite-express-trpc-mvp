@@ -1,7 +1,7 @@
 import { trpc } from 'trpc'
 
 export const Home = () => {
-   const { data } = trpc.getRole.useQuery()
+   const { data } = trpc.project.getAll.useQuery()
 
-   return <div>Current role: {data?.role}</div>
+   return <div>All projects:</div>
 }

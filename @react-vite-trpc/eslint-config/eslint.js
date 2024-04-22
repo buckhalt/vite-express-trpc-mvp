@@ -1,33 +1,60 @@
-module.exports = {
-   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-   parser: '@typescript-eslint/parser',
-   plugins: ['@typescript-eslint', 'prettier', 'unused-imports'],
-   ignorePatterns: ['node_modules', '.turbo', 'dist', 'dev-dist', 'coverage'],
-   rules: {
-      'prettier/prettier': ['error', { endOfLine: 'auto' }],
-      'no-return-await': ['error'],
-      'prefer-destructuring': ['error'],
-      'object-shorthand': ['error'],
-      'no-unneeded-ternary': ['error'],
-      'prefer-template': ['error'],
-      '@typescript-eslint/consistent-type-imports': ['error', { fixStyle: 'inline-type-imports' }],
-      'no-empty': ['error', { allowEmptyCatch: true }],
-      'unused-imports/no-unused-imports': 'warn',
-      '@typescript-eslint/no-unused-vars': [
-         'error',
-         {
-            argsIgnorePattern: '^_',
-            varsIgnorePattern: '^_',
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
+
+/** @type {import("eslint").Linter.Config} */
+const config = {
+   overrides: [
+      {
+         extends: [
+            'plugin:@typescript-eslint/stylistic-type-checked',
+            'plugin:@typescript-eslint/recommended-type-checked',
+         ],
+         files: ['*.ts', '*.tsx'],
+         parserOptions: {
+            project: path.join(__dirname, 'tsconfig.json'),
          },
-      ],
-      'object-curly-newline': [
+      },
+   ],
+   parser: '@typescript-eslint/parser',
+   parserOptions: {
+      project: path.join(__dirname, 'tsconfig.json'),
+   },
+   plugins: ['@typescript-eslint', 'eslint-plugin-local-rules'],
+   extends: [
+      'eslint:recommended',
+      'plugin:@typescript-eslint/stylistic',
+      'plugin:@typescript-eslint/recommended',
+      'next/core-web-vitals',
+      'prettier',
+   ],
+   ignorePatterns: ['node_modules', '*.stories.*', '*.test.*'],
+   rules: {
+      '@next/next/no-img-element': 'off',
+      'import/no-anonymous-default-export': 'off',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+      'no-process-env': 'error',
+      'no-console': 'error',
+      '@typescript-eslint/consistent-type-imports': [
          'warn',
          {
-            ObjectExpression: {
-               multiline: true,
-               minProperties: 2,
-            },
+            prefer: 'type-imports',
+            fixStyle: 'inline-type-imports',
          },
       ],
+      '@typescript-eslint/no-unused-vars': [
+         'warn',
+         {
+            argsIgnorePattern: '^_',
+         },
+      ],
+      '@typescript-eslint/no-misused-promises': [
+         'error',
+         {
+            checksVoidReturn: false,
+         },
+      ],
+      'no-unreachable': 'error',
+      'local-rules/require-data-mapper': 'error',
    },
 }
+module.exports = config
