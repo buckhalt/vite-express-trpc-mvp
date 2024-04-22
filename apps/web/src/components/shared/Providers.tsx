@@ -1,11 +1,7 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { type PropsWithChildren } from 'react'
-import { ThemeProvider } from 'styled-components'
 
 import { trpc } from 'trpc'
-
-import { theme } from 'styles'
-import 'styles/index.scss'
 
 import { useTrpc } from 'hooks'
 
@@ -14,9 +10,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
 
    return (
       <trpc.Provider client={trpcClient} queryClient={trpcQueryClient}>
-         <QueryClientProvider client={trpcQueryClient}>
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
-         </QueryClientProvider>
+         <QueryClientProvider client={trpcQueryClient}>{children}</QueryClientProvider>
       </trpc.Provider>
    )
 }

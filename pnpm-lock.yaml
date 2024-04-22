@@ -100,10 +100,6 @@ importers:
   '@react-vite-trpc/tsconfig': {}
 
   '@react-vite-trpc/ui':
-    dependencies:
-      styled-components:
-        specifier: ^5.3.11
-        version: 5.3.11(@babel/core@7.22.9)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
     devDependencies:
       '@react-vite-trpc/eslint-config':
         specifier: workspace:*

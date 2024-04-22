@@ -29,9 +29,6 @@
 
       "^assets(.*)",
 
-      "(.*)styled$",
-      "(.*)styled/(.*)",
-
       "^components/shared$",
 
       "^components(.*)",
