@@ -12,7 +12,9 @@
       "lint:fix": "eslint . --fix",
       "ts:check": "tsc -b",
       "check": "pnpm lint && pnpm ts:check",
-      "build": "tsc -b"
+      "build": "tsc -b",
+      "db:push": "drizzle-kit push:sqlite --config drizzle.config.ts",
+      "db:generate": "drizzle-kit generate:sqlite --config drizzle.config.ts"
    },
    "dependencies": {
       "@libsql/client": "^0.6.0",

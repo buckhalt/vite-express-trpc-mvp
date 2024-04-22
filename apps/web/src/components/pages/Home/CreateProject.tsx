@@ -14,6 +14,7 @@ import { useState } from 'react'
 
 export function CreateProject() {
    const [projectName, setProjectName] = useState('')
+   const [description, setDescription] = useState('')
 
    const [open, setOpen] = useState(false)
 
@@ -21,7 +22,7 @@ export function CreateProject() {
 
    const handleCreateProject = async () => {
       try {
-         await createProject.mutateAsync({ name: projectName })
+         await createProject.mutateAsync({ name: projectName, description })
          setOpen(false)
       } catch (error) {
          console.error('Error creating project:', error)
@@ -48,6 +49,12 @@ export function CreateProject() {
             >
                <Label>Project Name</Label>
                <Input placeholder="Project Name" className="mb-4" onChange={e => setProjectName(e.target.value)} />
+               <Label>Description</Label>
+               <Input
+                  placeholder="Project Description"
+                  className="mb-4"
+                  onChange={e => setDescription(e.target.value)}
+               />
                <Button type="submit">Create</Button>
             </form>
          </DialogContent>
