@@ -17,6 +17,7 @@
       "@radix-ui/react-select": "^2.0.0",
       "@radix-ui/react-slot": "^1.0.2",
       "@tanstack/react-query": "^4.29.12",
+      "@tanstack/react-router": "^1.29.2",
       "@trpc/client": "^10.29.1",
       "@trpc/react-query": "^10.29.1",
       "@trpc/server": "^10.29.1",
@@ -32,7 +33,8 @@
    "devDependencies": {
       "@react-vite-trpc/eslint-config": "workspace:*",
       "@react-vite-trpc/tsconfig": "workspace:*",
-      "@tanstack/router": "0.0.1-beta.139",
+      "@tanstack/router-devtools": "^1.29.2",
+      "@tanstack/router-vite-plugin": "^1.30.0",
       "@types/node": "^20.12.7",
       "@types/react": "^18.2.11",
       "@types/react-dom": "^18.2.4",

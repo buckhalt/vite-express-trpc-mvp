@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 
 import { Environment } from './src/env/env'
 
@@ -22,7 +23,7 @@ export default defineConfig(({ mode }) => {
    const env = loadEnv(mode, process.cwd())
 
    return {
-      plugins: [envPlugin(env), tsconfigPaths(), react()],
+      plugins: [envPlugin(env), tsconfigPaths(), react(), TanStackRouterVite()],
       server: {
          host: true,
          port: 3000,
