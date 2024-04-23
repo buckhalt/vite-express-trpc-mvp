@@ -13,7 +13,8 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as OrganizationImport } from './routes/$organization'
+import { Route as OrganizationIndexImport } from './routes/$organization/index'
+import { Route as OrganizationProjectImport } from './routes/$organization/$project'
 
 // Create Virtual Routes
 
@@ -21,15 +22,20 @@ const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
-const OrganizationRoute = OrganizationImport.update({
-  path: '/$organization',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const OrganizationIndexRoute = OrganizationIndexImport.update({
+  path: '/$organization/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const OrganizationProjectRoute = OrganizationProjectImport.update({
+  path: '/$organization/$project',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,8 +45,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/$organization': {
-      preLoaderRoute: typeof OrganizationImport
+    '/$organization/$project': {
+      preLoaderRoute: typeof OrganizationProjectImport
+      parentRoute: typeof rootRoute
+    }
+    '/$organization/': {
+      preLoaderRoute: typeof OrganizationIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -50,7 +60,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  OrganizationRoute,
+  OrganizationProjectRoute,
+  OrganizationIndexRoute,
 ])
 
 /* prettier-ignore-end */

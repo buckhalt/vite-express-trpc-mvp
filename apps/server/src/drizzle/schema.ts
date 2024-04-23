@@ -23,7 +23,6 @@ export const apiProject = createInsertSchema(projects, { name: z.string() });
 // This type could be simpler, but we would need to fetch the orgId using the slug from frontend
 // This lets us use the orgSlug in the frontend and do the lookup on the backend
 export const apiCreateProject = apiProject.pick({ name: true, description: true }).extend({ orgSlug: z.string() });
-export const apiGetProjectsBySlug = z.object({ orgSlug: z.string() });
 
 export type InsertOrganization = typeof organizations.$inferInsert;
 export type SelectOrganizations = typeof organizations.$inferSelect;

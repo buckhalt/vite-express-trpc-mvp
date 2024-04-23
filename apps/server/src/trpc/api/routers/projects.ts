@@ -1,8 +1,9 @@
 import { eq } from 'drizzle-orm';
 import { db } from 'drizzle/db';
-import { apiCreateProject, apiGetProjectsBySlug, organizations, projects } from 'drizzle/schema';
+import { apiCreateProject, organizations, projects } from 'drizzle/schema';
 
 import { publicProcedure, router } from 'trpc';
+import { z } from 'zod';
 
 export const projectsRouter = router({
    create: publicProcedure.input(apiCreateProject).mutation(async req => {
@@ -23,7 +24,15 @@ export const projectsRouter = router({
          .returning();
    }),
 
-   getBySlug: publicProcedure.input(apiGetProjectsBySlug).query(async req => {
+   getBySlug: publicProcedure.input(z.object({ projectSlug: z.string() })).query(async req => {
+      const { projectSlug } = req.input;
+
+      const project = await db.select().from(projects).where(eq(projects.slug, projectSlug));
+      // todo: projectSlug is unique, so we can just get one project from db instead of array
+      return project[0];
+   }),
+
+   getAllByOrgSlug: publicProcedure.input(z.object({ orgSlug: z.string() })).query(async req => {
       console.log('req.input', req.input);
       const { orgSlug } = req.input;
 
