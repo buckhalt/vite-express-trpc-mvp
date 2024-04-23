@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import {
    Dialog,
    DialogContent,
@@ -6,28 +6,28 @@ import {
    DialogHeader,
    DialogTitle,
    DialogTrigger,
-} from '@/components/ui/dialog'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { trpc } from '@/trpc'
-import { Plus } from 'lucide-react'
-import { useState } from 'react'
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { trpc } from '@/trpc';
+import { Plus } from 'lucide-react';
+import { useState } from 'react';
 
 export function CreateOrganization() {
-   const [orgName, setOrgName] = useState('')
+   const [orgName, setOrgName] = useState('');
 
-   const [open, setOpen] = useState(false)
+   const [open, setOpen] = useState(false);
 
-   const createOrganization = trpc.organization.create.useMutation()
+   const createOrganization = trpc.organization.create.useMutation();
 
    const handleCreateOrg = async () => {
       try {
-         await createOrganization.mutateAsync({ name: orgName })
-         setOpen(false)
+         await createOrganization.mutateAsync({ name: orgName });
+         setOpen(false);
       } catch (error) {
-         console.error('Error creating org:', error)
+         console.error('Error creating org:', error);
       }
-   }
+   };
 
    return (
       <Dialog open={open} onOpenChange={setOpen}>
@@ -43,9 +43,9 @@ export function CreateOrganization() {
             </DialogHeader>
             <form
                onSubmit={e => {
-                  e.preventDefault()
-                  void handleCreateOrg()
-                  setOpen(false)
+                  e.preventDefault();
+                  void handleCreateOrg();
+                  setOpen(false);
                }}
             >
                <Label>Organization Name</Label>
@@ -54,5 +54,5 @@ export function CreateOrganization() {
             </form>
          </DialogContent>
       </Dialog>
-   )
+   );
 }
