@@ -2,16 +2,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { trpc } from '@/trpc';
 
 import { CreateOrganization } from './CreateOrganization';
-import { useNavigate, getRouteApi } from '@tanstack/react-router';
+import { useNavigate, useParams } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 export function OrganizationSwitcher() {
-   const route = getRouteApi('/$organization/');
-   const { organization } = route.useParams();
-
-   const navigate = useNavigate();
-
    const { data } = trpc.organization.getAll.useQuery();
+   const { organization } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
+   const navigate = useNavigate();
 
    const selectedOrg = useMemo(() => {
       return organization || '';

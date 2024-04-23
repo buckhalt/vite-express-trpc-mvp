@@ -10,13 +10,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { trpc } from '@/trpc';
-import { getRouteApi } from '@tanstack/react-router';
+import { useParams } from '@tanstack/react-router';
 import { useState } from 'react';
 
 export function CreateProject() {
-   // Use getRouteApi instead of useParams so that we can access the type-safe params
-   const route = getRouteApi('/$organization/');
-   const { organization } = route.useParams();
+   const { organization } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
 
    const [projectName, setProjectName] = useState('');
    const [description, setDescription] = useState('');
