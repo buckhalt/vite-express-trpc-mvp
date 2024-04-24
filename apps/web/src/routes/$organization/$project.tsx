@@ -7,7 +7,7 @@ export const Route = createFileRoute('/$organization/$project')({
 });
 
 function ProjectsDashboard() {
-   const { organization, project } = Route.useParams();
+   const { project } = Route.useParams();
    const { data: projectData } = trpc.project.getBySlug.useQuery({ projectSlug: project });
    const { data: filesData } = trpc.file.getAllByProjectsSlug.useQuery({ projectSlug: project });
    if (!projectData) {
@@ -20,7 +20,7 @@ function ProjectsDashboard() {
                <h1 className="text-3xl font-medium">{projectData.name}</h1>
                <div className="text-muted-foreground">Description: {projectData.description}</div>
             </div>
-            <FileUploader />
+            <FileUploader projectSlug={project} />
          </div>
          <div>
             <div className="grid grid-cols-3 gap-4">

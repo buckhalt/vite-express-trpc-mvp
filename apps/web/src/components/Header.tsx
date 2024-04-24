@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const Header = () => {
    const { project } = useParams({ strict: false });
+
    return (
       <div className="flex flex-row items-center justify-between p-4 border-b bg-transparent">
          <div className="flex flex-row items-center space-x-2">

@@ -1,10 +1,8 @@
 import { UploadButton } from '@/components/uploadthing';
 import { trpc } from '@/trpc';
-import { useParams } from '@tanstack/react-router';
 
-export const FileUploader = () => {
+export const FileUploader = ({ projectSlug }: { projectSlug: string }) => {
    const utils = trpc.useUtils();
-   const { project } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
 
    const createFile = trpc.file.create.useMutation({
       onSuccess: () => {
@@ -20,7 +18,7 @@ export const FileUploader = () => {
          skipPolling
          onClientUploadComplete={uploadedFiles => {
             uploadedFiles.map(file => {
-               createFile.mutateAsync({ name: file.name, key: file.key, url: file.url, projectSlug: project });
+               createFile.mutateAsync({ name: file.name, key: file.key, url: file.url, projectSlug });
             });
             alert('Upload complete');
          }}
