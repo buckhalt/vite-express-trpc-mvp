@@ -48,3 +48,9 @@ const getOrganizationIdFromSlug = async (orgSlug: string) => {
    const orgsWithSlug = await db.select().from(organizations).where(eq(organizations.slug, orgSlug));
    return orgsWithSlug[0].id;
 };
+
+export const getProjectIdFromSlug = async (projectSlug: string) => {
+   // todo: only select one, assuming slug is unique
+   const projectsWithSlug = await db.select().from(projects).where(eq(projects.slug, projectSlug));
+   return projectsWithSlug[0].id;
+};

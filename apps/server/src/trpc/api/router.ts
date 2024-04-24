@@ -7,12 +7,13 @@ import { router } from 'trpc';
 
 import { organizationsRouter } from './routers/organizations';
 import { projectsRouter } from './routers/projects';
+import { filesRouter } from './routers/files';
 
 export type AppRouter = typeof appRouter;
 
 export type Context = inferAsyncReturnType<typeof createContext>;
 
-const appRouter = router({ project: projectsRouter, organization: organizationsRouter });
+const appRouter = router({ project: projectsRouter, organization: organizationsRouter, file: filesRouter });
 
 const createContext = ({ req, res }: CreateExpressContextOptions) => ({
    req,
