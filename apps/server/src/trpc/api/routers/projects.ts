@@ -33,7 +33,6 @@ export const projectsRouter = router({
    }),
 
    getAllByOrgSlug: publicProcedure.input(z.object({ orgSlug: z.string() })).query(async req => {
-      console.log('req.input', req.input);
       const { orgSlug } = req.input;
 
       const organizationId = await getOrganizationIdFromSlug(orgSlug);

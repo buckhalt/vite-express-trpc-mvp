@@ -14,12 +14,16 @@ import { Plus } from 'lucide-react';
 import { useState } from 'react';
 
 export function CreateOrganization() {
+   const utils = trpc.useContext();
    const [orgName, setOrgName] = useState('');
 
    const [open, setOpen] = useState(false);
 
-   const createOrganization = trpc.organization.create.useMutation();
-
+   const createOrganization = trpc.organization.create.useMutation({
+      onSuccess: () => {
+         utils.organization.getAll.invalidate();
+      },
+   });
    const handleCreateOrg = async () => {
       try {
          await createOrganization.mutateAsync({ name: orgName });
