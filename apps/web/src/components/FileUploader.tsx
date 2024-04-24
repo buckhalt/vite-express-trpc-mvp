@@ -16,7 +16,7 @@ export const FileUploader = () => {
    return (
       <UploadButton
          className="mt-4 ut-button:bg-primary"
-         endpoint="videoAndImage"
+         endpoint="image"
          skipPolling
          onClientUploadComplete={uploadedFiles => {
             uploadedFiles.map(file => {

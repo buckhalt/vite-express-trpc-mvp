@@ -1,17 +1,28 @@
-import { OrganizationSwitcher } from './OrganizationSwitcher'
+import { Link } from '@tanstack/react-router';
+import { OrganizationSwitcher } from './OrganizationSwitcher';
+import { Slash, Palette } from 'lucide-react';
+import { useParams } from '@tanstack/react-router';
+import { Badge } from '@/components/ui/badge';
 
 export const Header = () => {
+   const { project } = useParams({ strict: false });
    return (
-      <div className="flex flex-row items-center justify-between bg-slate-200 p-2">
+      <div className="flex flex-row items-center justify-between p-4 border-b bg-transparent">
          <div className="flex flex-row items-center space-x-2">
-            <div className="flex flex-col">
-               <h4 className='font-medium'>Studio MVP</h4>
-               <h4>Vite + Express + tRPC + Drizzle + Turso</h4>
-            </div>
-         </div>
-         <div className="p-2 flex flex-row space-x-2">
+            <Link to="/">
+               <div className="bg-indigo-500 rounded-lg p-2">
+                  <Palette size={20} className="text-white" />
+               </div>
+            </Link>
+            <Slash size={18} className="text-slate-200" />
             <OrganizationSwitcher />
+            {project && (
+               <>
+                  <Slash size={18} className="text-slate-200" />
+                  <Badge variant="secondary">{project}</Badge>
+               </>
+            )}
          </div>
       </div>
-   )
-}
+   );
+};

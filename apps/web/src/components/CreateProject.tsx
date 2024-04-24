@@ -40,7 +40,7 @@ export function CreateProject() {
    return (
       <Dialog open={open} onOpenChange={setOpen}>
          <DialogTrigger>
-            <Button variant="outline">+ Create Project</Button>
+            <Button>+ Create Project</Button>
          </DialogTrigger>
          <DialogContent>
             <DialogHeader>

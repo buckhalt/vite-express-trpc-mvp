@@ -18,13 +18,10 @@ const f = createUploadthing({
  * @see https://docs.uploadthing.com/api-reference/server#file-routes
  */
 export const uploadRouter = {
-   videoAndImage: f({
+   image: f({
       image: {
          maxFileSize: '4MB',
          maxFileCount: 4,
-      },
-      video: {
-         maxFileSize: '16MB',
       },
    }).onUploadComplete(data => {
       console.log('upload completed', data);

@@ -13,7 +13,7 @@ function OrganizationDashboard() {
    const { organization } = Route.useParams();
    const { data } = trpc.project.getAllByOrgSlug.useQuery({ orgSlug: organization });
    return (
-      <div className="flex flex-col p-12">
+      <div className="flex flex-col p-12 ">
          <div className="flex justify-between">
             <h1 className="text-3xl font-medium pb-2"> Projects for {organization}</h1>
             <div className="flex flex-row space-x-2">
