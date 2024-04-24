@@ -14,7 +14,7 @@ import { Plus } from 'lucide-react';
 import { useState } from 'react';
 
 export function CreateOrganization() {
-   const utils = trpc.useContext();
+   const utils = trpc.useUtils();
    const [orgName, setOrgName] = useState('');
 
    const [open, setOpen] = useState(false);

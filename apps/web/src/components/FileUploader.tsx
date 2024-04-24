@@ -3,7 +3,7 @@ import { trpc } from '@/trpc';
 import { useParams } from '@tanstack/react-router';
 
 export const FileUploader = () => {
-   const utils = trpc.useContext();
+   const utils = trpc.useUtils();
    const { project } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
 
    const createFile = trpc.file.create.useMutation({

@@ -22,7 +22,7 @@
    },
    "devDependencies": {
       "@react-vite-trpc/eslint-config": "workspace:*",
-      "@swc/core": "^1.4.16",
+      "@swc/core": "^1.5.0",
       "eslint": "^8.57.0",
       "turbo": "^1.13.2",
       "typescript": "^5.4.5",
