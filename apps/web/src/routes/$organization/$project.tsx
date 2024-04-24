@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { trpc } from '@/trpc';
+import { UploadButton } from '@/components/uploadthing';
 
 export const Route = createFileRoute('/$organization/$project')({
    component: ProjectsDashboard,
@@ -12,13 +13,25 @@ function ProjectsDashboard() {
       return null;
    }
    return (
-      <div className="flex flex-col p-12">
+      <div className="flex justify-between p-12">
          <div className="flex flex-col justify-between">
             <h1 className="text-3xl font-medium pb-2">{data.name}</h1>
             <div className="text-muted-foreground">Description: {data.description}</div>
             <div className="text-muted-foreground">Organization: {organization}</div>
-            <div className="flex flex-row space-x-2"></div>
          </div>
+         <UploadButton
+            className="mt-4 ut-button:bg-primary"
+            endpoint="videoAndImage"
+            skipPolling
+            onClientUploadComplete={file => {
+               console.log('uploaded', file);
+               alert('Upload complete');
+            }}
+            onUploadError={error => {
+               console.error(error, error.cause);
+               alert('Upload failed');
+            }}
+         />
       </div>
    );
 }

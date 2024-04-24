@@ -22,6 +22,7 @@
       "@trpc/client": "^10.29.1",
       "@trpc/react-query": "^10.29.1",
       "@trpc/server": "^10.29.1",
+      "@uploadthing/react": "^6.4.4",
       "class-variance-authority": "^0.7.0",
       "clsx": "^2.1.0",
       "lucide-react": "^0.372.0",
@@ -29,7 +30,8 @@
       "react-dom": "^18.2.0",
       "react-query": "^3.39.3",
       "tailwind-merge": "^2.3.0",
-      "tailwindcss-animate": "^1.0.7"
+      "tailwindcss-animate": "^1.0.7",
+      "uploadthing": "^6.9.0"
    },
    "devDependencies": {
       "@react-vite-trpc/eslint-config": "workspace:*",
