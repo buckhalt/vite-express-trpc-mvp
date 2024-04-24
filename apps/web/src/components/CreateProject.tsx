@@ -14,6 +14,7 @@ import { useParams } from '@tanstack/react-router';
 import { useState } from 'react';
 
 export function CreateProject() {
+   const utils = trpc.useContext();
    const { organization } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
 
    const [projectName, setProjectName] = useState('');
@@ -21,7 +22,11 @@ export function CreateProject() {
 
    const [open, setOpen] = useState(false);
 
-   const createProject = trpc.project.create.useMutation();
+   const createProject = trpc.project.create.useMutation({
+      onSuccess: () => {
+         utils.project.getAllByOrgSlug.invalidate();
+      },
+   });
 
    const handleCreateProject = async () => {
       try {

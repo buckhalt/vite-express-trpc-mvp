@@ -18,8 +18,8 @@
    },
    "dependencies": {
       "@libsql/client": "^0.6.0",
-      "@trpc/client": "^10.29.1",
-      "@trpc/server": "^10.29.1",
+      "@trpc/client": "^10.45.2",
+      "@trpc/server": "^10.45.2",
       "cookie-parser": "^1.4.6",
       "drizzle-orm": "^0.30.9",
       "drizzle-zod": "^0.5.1",
