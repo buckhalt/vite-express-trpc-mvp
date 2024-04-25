@@ -18,14 +18,16 @@
    },
    "dependencies": {
       "@libsql/client": "^0.6.0",
-      "@trpc/client": "^10.45.2",
-      "@trpc/server": "^10.45.2",
+      "@trpc/client": "11.0.0-rc.354",
+      "@trpc/server": "11.0.0-rc.354",
       "cookie-parser": "^1.4.6",
       "cors": "^2.8.5",
       "drizzle-orm": "^0.30.9",
       "drizzle-zod": "^0.5.1",
       "express": "^4.19.2",
       "express-serve-static-core": "^0.1.1",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.4.5",
       "uploadthing": "^6.10.0",
       "zod": "^3.23.4"
    },
@@ -46,7 +48,6 @@
       "fs-extra": "^11.2.0",
       "module-alias": "^2.2.3",
       "nodemon": "^2.0.22",
-      "pm2": "^5.3.1",
-      "typescript": "^4.9.5"
+      "pm2": "^5.3.1"
    }
 }

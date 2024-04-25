@@ -1,8 +1,6 @@
 import { initTRPC } from '@trpc/server'
 
-import { type Context } from './api/router'
-
-const t = initTRPC.context<Context>().create()
+const t = initTRPC.context().create()
 
 export const publicProcedure = t.procedure
 

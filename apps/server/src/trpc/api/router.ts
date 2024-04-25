@@ -1,4 +1,4 @@
-import type { inferAsyncReturnType } from '@trpc/server';
+
 import type { CreateExpressContextOptions } from '@trpc/server/adapters/express';
 import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import type { Application } from 'express';
@@ -10,8 +10,6 @@ import { projectsRouter } from './routers/projects';
 import { filesRouter } from './routers/files';
 
 export type AppRouter = typeof appRouter;
-
-export type Context = inferAsyncReturnType<typeof createContext>;
 
 const appRouter = router({ project: projectsRouter, organization: organizationsRouter, file: filesRouter });
 

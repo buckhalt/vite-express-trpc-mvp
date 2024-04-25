@@ -5,6 +5,7 @@ import { useParams } from '@tanstack/react-router';
 import { Badge } from '@/components/ui/badge';
 
 export const Header = () => {
+   // @ts-ignore
    const { project } = useParams({ strict: false });
 
    return (

@@ -7,6 +7,8 @@ import { useMemo } from 'react';
 
 export function OrganizationSwitcher() {
    const { data } = trpc.organization.getAll.useQuery();
+
+   // @ts-ignore
    const { organization } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
    const navigate = useNavigate();
 
