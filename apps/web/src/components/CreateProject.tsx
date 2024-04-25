@@ -15,6 +15,7 @@ import { useState } from 'react';
 
 export function CreateProject() {
    const utils = trpc.useUtils();
+   // @ts-ignore
    const { organization } = useParams({ strict: false }); // need to use strict: false to denote that you want to access params from ambiguous location (outside route)
 
    const [projectName, setProjectName] = useState('');
