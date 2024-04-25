@@ -1,1 +1,1 @@
-{ "extends": ["@react-vite-trpc/eslint-config/react"] }
+{ "extends": ["@studio/eslint-config/react"] }

@@ -1,10 +1,10 @@
 {
-   "name": "@react-vite-trpc/server",
+   "name": "@studio/server",
    "version": "1.0.0",
    "private": true,
    "scripts": {
       "start": "cross-env NODE_ENV=production node dist/src/server.js",
-      "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start dist/src/server.js --name @react-vite-trpc/server",
+      "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start dist/src/server.js --name @studio/server",
       "pm2:delete": "pm2 delete all &",
       "pm2:logs": "pm2 logs",
       "dev": "nodemon src/server.ts",
@@ -32,8 +32,8 @@
       "zod": "^3.23.4"
    },
    "devDependencies": {
-      "@react-vite-trpc/config": "workspace:*",
-      "@react-vite-trpc/tsconfig": "workspace:*",
+      "@studio/config": "workspace:*",
+      "@studio/tsconfig": "workspace:*",
       "@swc/core": "^1.5.0",
       "@types/cookie-parser": "^1.4.7",
       "@types/cors": "^2.8.17",

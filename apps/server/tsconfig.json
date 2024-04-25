@@ -1,5 +1,5 @@
 {
-   "extends": "@react-vite-trpc/tsconfig/node.json",
+   "extends": "@studio/tsconfig/node.json",
    "compilerOptions": {
       "baseUrl": "src",
       "outDir": "dist"
@@ -7,7 +7,7 @@
    "include": ["src", "vite.config.ts"],
    "references": [
       {
-         "path": "../../@react-vite-trpc/config/tsconfig.json"
+         "path": "../../@studio/config/tsconfig.json"
       }
    ]
 }

@@ -1,5 +1,5 @@
 {
-   "extends": "@react-vite-trpc/tsconfig/base.json",
+   "extends": "@studio/tsconfig/base.json",
    "compilerOptions": {
       "baseUrl": "src",
       "outDir": "dist"

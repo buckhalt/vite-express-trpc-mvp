@@ -14,7 +14,7 @@
 
       "^env$",
 
-      "^@react-vite-trpc(.*)",
+      "^@studio(.*)",
 
       "^trpc(.*)",
       "^@trpc$",

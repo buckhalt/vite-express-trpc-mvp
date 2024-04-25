@@ -8,9 +8,9 @@ importers:
 
   .:
     devDependencies:
-      '@react-vite-trpc/eslint-config':
+      '@studio/eslint-config':
         specifier: workspace:*
-        version: link:@react-vite-trpc/eslint-config
+        version: link:@studio/eslint-config
       '@swc/core':
         specifier: ^1.5.0
         version: 1.5.0
@@ -27,16 +27,16 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2(typescript@5.4.5)(vite@4.5.3)
 
-  '@react-vite-trpc/config':
+  '@studio/config':
     dependencies:
       envalid:
         specifier: ^7.3.1
         version: 7.3.1
     devDependencies:
-      '@react-vite-trpc/eslint-config':
+      '@studio/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@react-vite-trpc/tsconfig':
+      '@studio/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
@@ -49,7 +49,7 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
-  '@react-vite-trpc/eslint-config':
+  '@studio/eslint-config':
     dependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.1
@@ -79,7 +79,7 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
-  '@react-vite-trpc/tsconfig': {}
+  '@studio/tsconfig': {}
 
   apps/server:
     dependencies:
@@ -123,12 +123,12 @@ importers:
         specifier: ^3.23.4
         version: 3.23.4
     devDependencies:
-      '@react-vite-trpc/config':
+      '@studio/config':
         specifier: workspace:*
-        version: link:../../@react-vite-trpc/config
-      '@react-vite-trpc/tsconfig':
+        version: link:../../@studio/config
+      '@studio/tsconfig':
         specifier: workspace:*
-        version: link:../../@react-vite-trpc/tsconfig
+        version: link:../../@studio/tsconfig
       '@swc/core':
         specifier: ^1.5.0
         version: 1.5.0
@@ -235,12 +235,12 @@ importers:
         specifier: ^6.10.0
         version: 6.10.0(fast-check@3.17.2)(tailwindcss@3.4.3)
     devDependencies:
-      '@react-vite-trpc/eslint-config':
+      '@studio/eslint-config':
         specifier: workspace:*
-        version: link:../../@react-vite-trpc/eslint-config
-      '@react-vite-trpc/tsconfig':
+        version: link:../../@studio/eslint-config
+      '@studio/tsconfig':
         specifier: workspace:*
-        version: link:../../@react-vite-trpc/tsconfig
+        version: link:../../@studio/tsconfig
       '@tanstack/router-devtools':
         specifier: ^1.29.2
         version: 1.29.2(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0)
