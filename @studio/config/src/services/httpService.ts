@@ -1,9 +1,10 @@
 import { cleanEnv } from 'envalid';
 
 const { isProd } = cleanEnv(process.env, {});
+const HOSTNAME = process.env.HOSTNAME;
 
 export class HttpService {
-   private static readonly host = 'react-vite-trpc.onrender.com'; // NOTE: must be a raw hostname
+   private static readonly host = HOSTNAME;
 
    private static readonly serverPort = 3001;
 

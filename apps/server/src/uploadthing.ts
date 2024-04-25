@@ -29,3 +29,5 @@ export const uploadRouter = {
 } satisfies FileRouter;
 
 export type OurFileRouter = typeof uploadRouter;
+
+export const BACKEND_URL = `http://localhost:3001/api/uploadthing`;

@@ -5,9 +5,7 @@ import {
    type GenerateTypedHelpersOptions,
 } from '@uploadthing/react';
 
-import type { OurFileRouter } from '../../../server/src/uploadthing';
-
-const BACKEND_URL = 'http://localhost:3001/api/uploadthing';
+import { type OurFileRouter, BACKEND_URL } from '../../../server/src/uploadthing';
 
 const initOpts = {
    url: BACKEND_URL,
