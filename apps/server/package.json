@@ -14,7 +14,8 @@
       "check": "pnpm lint && pnpm ts:check",
       "build": "tsc -b",
       "db:push": "drizzle-kit push:sqlite --config drizzle.config.ts",
-      "db:generate": "drizzle-kit generate:sqlite --config drizzle.config.ts"
+      "db:generate": "drizzle-kit generate:sqlite --config drizzle.config.ts",
+      "main": "cross-env NODE_ENV=production node dist/src/server.js"
    },
    "dependencies": {
       "@libsql/client": "^0.6.0",
