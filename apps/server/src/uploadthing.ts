@@ -30,4 +30,4 @@ export const uploadRouter = {
 
 export type OurFileRouter = typeof uploadRouter;
 
-export const BACKEND_URL = `http://localhost:3001/api/uploadthing`;
+export const BACKEND_URL = `https://studio-server-a2l0.onrender.com/api/uploadthing`;
