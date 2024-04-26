@@ -5,10 +5,10 @@ import {
    type GenerateTypedHelpersOptions,
 } from '@uploadthing/react';
 
-import { type OurFileRouter, BACKEND_URL } from '../../../server/src/uploadthing';
+import { type OurFileRouter } from '../../../server/src/uploadthing';
 
 const initOpts = {
-   url: BACKEND_URL,
+   url: 'https://studio-server-a2l0.onrender.com/api/uploadthing',
 } satisfies GenerateTypedHelpersOptions;
 
 export const UploadButton = generateUploadButton<OurFileRouter>(initOpts);
