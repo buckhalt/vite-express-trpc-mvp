@@ -1,7 +1,7 @@
-import { trpc } from '@/trpc'
-import { QueryClient } from '@tanstack/react-query'
-import { httpLink } from '@trpc/client/links/httpLink'
-import { useState } from 'react'
+import { trpc } from '@/trpc';
+import { QueryClient } from '@tanstack/react-query';
+import { httpLink } from '@trpc/client/links/httpLink';
+import { useState } from 'react';
 
 export const useTrpc = () => {
    const [trpcQueryClient] = useState(
@@ -14,12 +14,14 @@ export const useTrpc = () => {
                },
             },
          })
-   )
+   );
 
-   const [trpcClient] = useState(() => trpc.createClient({ links: [httpLink({ url: '/trpc' })] }))
+   const [trpcClient] = useState(() =>
+      trpc.createClient({ links: [httpLink({ url: `${import.meta.env.BACKEND_URL}/trpc` })] })
+   );
 
    return {
       trpcQueryClient,
       trpcClient,
-   }
-}
+   };
+};
