@@ -1,10 +1,10 @@
 import { cleanEnv } from 'envalid';
 
 const { isProd } = cleanEnv(process.env, {});
-const HOSTNAME = process.env.HOSTNAME;
+// const HOSTNAME = process.env.HOSTNAME;
 
 export class HttpService {
-   private static readonly host = HOSTNAME;
+   private static readonly host = 'https://studio-mvp.vercel.app';
 
    private static readonly serverPort = 3001;
 
