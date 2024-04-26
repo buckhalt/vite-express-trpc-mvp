@@ -8,7 +8,7 @@ import {
 import { type OurFileRouter } from '../../../server/src/uploadthing';
 
 const initOpts = {
-   url: `/api/uploadthing`,
+   url: `${import.meta.env.BACKEND_URL}/api/uploadthing`,
 } satisfies GenerateTypedHelpersOptions;
 
 export const UploadButton = generateUploadButton<OurFileRouter>(initOpts);
