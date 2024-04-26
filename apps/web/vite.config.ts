@@ -1,26 +1,26 @@
-import react from '@vitejs/plugin-react'
-import path from 'path'
-import { defineConfig, loadEnv } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import { defineConfig, loadEnv } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
 
-import { Environment } from './src/env/env'
+import { Environment } from './src/env/env';
 
 // --------------------plugins--------------------
 
-type Env = Record<string, string>
+type Env = Record<string, string>;
 
 const envPlugin = (env: Env) => ({
    name: 'env',
    transform: () => {
-      Environment.config(env)
+      Environment.config(env);
    },
-})
+});
 
 // --------------------config--------------------
 
 export default defineConfig(({ mode }) => {
-   const env = loadEnv(mode, process.cwd())
+   const env = loadEnv(mode, process.cwd());
 
    return {
       plugins: [envPlugin(env), tsconfigPaths(), react(), TanStackRouterVite()],
@@ -35,5 +35,5 @@ export default defineConfig(({ mode }) => {
             '@': path.resolve(__dirname, './src'),
          },
       },
-   }
-})
+   };
+});
