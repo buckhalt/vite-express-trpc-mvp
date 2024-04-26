@@ -17,7 +17,7 @@ export const useTrpc = () => {
    );
 
    const [trpcClient] = useState(() =>
-      trpc.createClient({ links: [httpLink({ url: `${import.meta.env.BACKEND_URL}/trpc` })] })
+      trpc.createClient({ links: [httpLink({ url: `${import.meta.env.VITE_BACKEND_URL}/trpc` })] })
    );
 
    return {
