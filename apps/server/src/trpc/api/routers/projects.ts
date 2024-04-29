@@ -1,8 +1,8 @@
 import { eq } from 'drizzle-orm';
-import { db } from 'drizzle/db';
-import { apiCreateProject, organizations, projects } from 'drizzle/schema';
+import { db } from '../../../drizzle/db';
+import { apiCreateProject, organizations, projects } from '../../../drizzle/schema';
 
-import { publicProcedure, router } from 'trpc';
+import { publicProcedure, router } from '../../../trpc';
 import { z } from 'zod';
 
 export const projectsRouter = router({

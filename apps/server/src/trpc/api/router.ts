@@ -2,7 +2,7 @@ import type { CreateExpressContextOptions } from '@trpc/server/adapters/express'
 import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import type { Application } from 'express';
 
-import { router } from 'trpc';
+import { router } from '../../trpc';
 
 import { organizationsRouter } from './routers/organizations';
 import { projectsRouter } from './routers/projects';

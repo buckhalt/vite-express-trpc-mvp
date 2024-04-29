@@ -4,9 +4,9 @@ import { join, resolve } from 'path';
 
 import { RequestHandler } from 'express-serve-static-core';
 
-import { isProd } from 'env';
+import { isProd } from '../env';
 
-import { initializeTrpc } from 'trpc/api/router';
+import { initializeTrpc } from '../trpc/api/router';
 
 export function configureMiddlewares(app: Application) {
    app.use(cookieParser() as RequestHandler);

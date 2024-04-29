@@ -1,9 +1,9 @@
 import { eq } from 'drizzle-orm';
-import { db } from 'drizzle/db';
-import { apiCreateFile, files } from 'drizzle/schema';
+import { db } from '../../../drizzle/db';
+import { apiCreateFile, files } from '../../../drizzle/schema';
 import { getProjectIdFromSlug } from './projects';
 
-import { publicProcedure, router } from 'trpc';
+import { publicProcedure, router } from '../../../trpc';
 import { z } from 'zod';
 
 export const filesRouter = router({

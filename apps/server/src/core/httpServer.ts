@@ -3,7 +3,7 @@ import http from 'http';
 import cors from 'cors';
 import { createRouteHandler } from 'uploadthing/express';
 import { uploadRouter } from '../uploadthing';
-import { PORT } from 'env';
+import { PORT } from '../env';
 
 export function createHttpServer(): { app: Application } {
    const app = express();

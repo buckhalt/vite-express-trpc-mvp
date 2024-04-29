@@ -1,7 +1,7 @@
-import { db } from 'drizzle/db';
-import { apiCreateOrganization, organizations } from 'drizzle/schema';
+import { db } from '../../../drizzle/db';
+import { apiCreateOrganization, organizations } from '../../../drizzle/schema';
 
-import { publicProcedure, router } from 'trpc';
+import { publicProcedure, router } from '../../../trpc';
 
 export const organizationsRouter = router({
    create: publicProcedure.input(apiCreateOrganization).mutation(async req => {

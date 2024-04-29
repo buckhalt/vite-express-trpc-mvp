@@ -23,7 +23,7 @@ export class Aliases {
 
          const packageName = `@${internalPackage}`.replace('/tsconfig.json', '');
 
-         const packageEntry = `${packageName}/index.ts`;
+         const packageEntry = `${packageName}/dist/index.js`;
 
          return { [packageName]: packageEntry };
       });
@@ -34,7 +34,7 @@ export class Aliases {
    }
 
    public static configDirectories() {
-      const directories = readdirSync('./api', { withFileTypes: true })
+      const directories = readdirSync('./src', { withFileTypes: true })
          .filter(directory => directory.isDirectory())
          .map(({ name }) => name);
 
