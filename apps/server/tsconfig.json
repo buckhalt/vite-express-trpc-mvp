@@ -1,9 +1,9 @@
 {
    "extends": "@studio/tsconfig/node.json",
    "compilerOptions": {
-      "baseUrl": "src",
+      "baseUrl": "api",
       "outDir": "dist"
    },
-   "include": ["src", "vite.config.ts"],
+   "include": ["api", "vite.config.ts"],
    "references": []
 }

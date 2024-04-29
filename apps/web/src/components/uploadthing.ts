@@ -5,7 +5,7 @@ import {
    type GenerateTypedHelpersOptions,
 } from '@uploadthing/react';
 
-import { type OurFileRouter } from '../../../server/src/uploadthing';
+import { type OurFileRouter } from '../../../server/api/uploadthing';
 
 const initOpts = {
    url: `${import.meta.env.VITE_BACKEND_URL}/api/uploadthing`,
