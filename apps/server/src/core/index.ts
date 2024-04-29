@@ -1,1 +1,1 @@
-export { HttpServer } from './httpServer'
+export { createHttpServer } from './httpServer';
