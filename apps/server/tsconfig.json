@@ -4,6 +4,6 @@
       "baseUrl": "src/api",
       "outDir": "dist"
    },
-   "include": ["src/api", "vite.config.ts"],
+   "include": ["src", "vite.config.ts"],
    "references": []
 }
