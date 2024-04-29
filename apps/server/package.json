@@ -2,10 +2,10 @@
    "name": "@studio/server",
    "version": "1.0.0",
    "private": true,
-   "main": "dist/api/index.js",
+   "main": "api/index.ts",
    "scripts": {
-      "start": "node dist/api/index.js",
-      "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start dist/api/index.js --name @studio/server",
+      "start": "node api/index.ts",
+      "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start api/index.ts --name @studio/server",
       "pm2:delete": "pm2 delete all &",
       "pm2:logs": "pm2 logs",
       "dev": "nodemon api/index.ts",
@@ -13,7 +13,6 @@
       "lint:fix": "eslint . --fix",
       "ts:check": "tsc -b",
       "check": "pnpm lint && pnpm ts:check",
-      "build": "tsc -b",
       "db:push": "drizzle-kit push:sqlite --config drizzle.config.ts",
       "db:generate": "drizzle-kit generate:sqlite --config drizzle.config.ts"
    },

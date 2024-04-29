@@ -23,7 +23,7 @@ export class Aliases {
 
          const packageName = `@${internalPackage}`.replace('/tsconfig.json', '');
 
-         const packageEntry = `${packageName}/dist/index.js`;
+         const packageEntry = `${packageName}/index.ts`;
 
          return { [packageName]: packageEntry };
       });
