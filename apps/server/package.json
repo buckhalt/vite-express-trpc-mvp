@@ -8,7 +8,6 @@
       "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start api/index.ts --name @studio/server",
       "pm2:delete": "pm2 delete all &",
       "pm2:logs": "pm2 logs",
-      "build": "tsup",
       "dev": "nodemon api/index.ts",
       "lint": "eslint .",
       "lint:fix": "eslint . --fix",
@@ -28,7 +27,6 @@
       "express": "^4.19.2",
       "express-serve-static-core": "^0.1.1",
       "ts-node": "^10.9.2",
-      "tsup": "^8.0.2",
       "typescript": "^5.4.5",
       "uploadthing": "^6.10.0",
       "zod": "^3.23.4"
