@@ -2,8 +2,9 @@
    "name": "@studio/server",
    "version": "1.0.0",
    "private": true,
+   "main": "dist/src/server.js",
    "scripts": {
-      "start": "cross-env NODE_ENV=production node dist/src/server.js",
+      "start": "node dist/src/server.js",
       "pm2:start": "pnpm pm2:delete && pnpm build && cross-env NODE_ENV=test pm2 start dist/src/server.js --name @studio/server",
       "pm2:delete": "pm2 delete all &",
       "pm2:logs": "pm2 logs",
